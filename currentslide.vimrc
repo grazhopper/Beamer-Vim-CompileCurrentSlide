@@ -41,6 +41,8 @@
 "       clean. It serves my purposes however ;)
 """
 
+map <S-f7> :python compilecurrentslide()<CR>
+
 python << EOF
 def compilecurrentslide():
     outfile = 'currentslide.pdf'
