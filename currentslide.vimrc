@@ -92,6 +92,7 @@ def getcurrentslidecode():
 
 def compilepdf(code, outfile):
     import os
+    pdflatex_command = 'pdflatex -interaction scrollmode'
     assert outfile[-4:] == '.pdf'
     # Extract basename from outfile
     basename = outfile[0:-4]
@@ -102,7 +103,7 @@ def compilepdf(code, outfile):
         texout.write('%s\n' % l)
     texout.close()
     # Create the pdf
-    os.system('pdflatex %s && pdflatex %s' % (texoutfilename, texoutfilename))
+    os.system('%s %s && %s %s' % (pdflatex_command, texoutfilename, pdflatex_command, texoutfilename))
 EOF
 
 " vim: filetype=python
