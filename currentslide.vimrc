@@ -47,8 +47,11 @@ python << EOF
 def compilecurrentslide():
     outfile = 'currentslide.pdf'
     code = getcurrentslidecode()
-    compilepdf(code, outfile=outfile)
-    print 'Created %s!' % outfile
+    result = compilepdf(code, outfile=outfile)
+    if result == 0:
+        print 'Successfully created %s!' % outfile
+    else:
+        print 'Error creating pdf...!'
 
 def getcurrentslidecode():
     import vim
@@ -103,7 +106,9 @@ def compilepdf(code, outfile):
         texout.write('%s\n' % l)
     texout.close()
     # Create the pdf
-    os.system('%s %s && %s %s' % (pdflatex_command, texoutfilename, pdflatex_command, texoutfilename))
+    result = os.system('%s %s && %s %s' % (pdflatex_command, texoutfilename,\
+        pdflatex_command, texoutfilename))
+    return result
 EOF
 
 " vim: filetype=python
