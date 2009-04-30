@@ -95,7 +95,7 @@ def getcurrentslidecode():
 
 def compilepdf(code, outfile):
     import os
-    pdflatex_command = 'pdflatex -interaction scrollmode'
+    pdflatex_command = 'pdflatex -interaction nonstopmode'
     assert outfile[-4:] == '.pdf'
     # Extract basename from outfile
     basename = outfile[0:-4]
