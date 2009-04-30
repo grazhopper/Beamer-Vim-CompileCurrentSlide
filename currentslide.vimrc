@@ -28,7 +28,7 @@
 " Usage:
 "   - The method could be mapped to a key stroke
 "
-"      :map <S-f7> :python compilecurrentslide()^M 
+"      :map <S-f7> :python compilecurrentslide()<CR>
 "
 " Features/Limitations/Prereqs:
 "   - the resulting pdf is called 'currentslide.pdf' and is written in de
