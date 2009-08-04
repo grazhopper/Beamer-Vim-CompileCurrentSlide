@@ -37,8 +37,6 @@
 "   - You will need vim compiled with the "+python" option (in Debian/Ubuntu
 "     vim-python)
 "
-" Note: This code was hacked together very quickly and can hardly be called
-"       clean. It serves my purposes however ;)
 """
 
 map <S-f7> :python compilecurrentslide()<CR>
